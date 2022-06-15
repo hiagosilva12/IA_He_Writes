@@ -1,10 +1,24 @@
 from asyncore import loop
+from time import sleep
 import speech_recognition as sr
 import os
 
+main = """
+ ______________________________________
+< Hello Im an AI but Im in development >
+ --------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+
+                ||----w |
+                ||     ||
+
+"""
+print(main)
+sleep(2)
+
 # funcao para reconhecimento de voz
-
-
 def ouvir_microfone():
 
     # habilita o microfone para ouvir o usuario
