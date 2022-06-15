@@ -10,7 +10,6 @@ def ouvir_microfone():
 
     # usando o microfone para capturar a fala
     with sr.Microphone() as source:
-
        # chama o algotimo de redução de ruído
         microfone.adjust_for_ambient_noise(source)
         # limpa a tela
@@ -34,12 +33,17 @@ def ouvir_microfone():
         # abre o gerenciador de tarefas
         elif frase == 'abrir o gerenciador de tarefas':
             os.system("gnome-system-monitor")
+        # mata o processo
+        elif frase == 'fechar o navegador':
+            os.system("killall firefox")
+
+        else:
+            print("Não existe essa opção")
 
         # se nao reconheceu a frase, exibe esta mensagem
     except sr.UnknownValueError:
         print("Não entendi")
-    except sr.RequestError as e:
-        print("Não consegui ouvir")
 
-    return frase
-ouvir_microfone()
+while True:
+    ouvir_microfone()
+    loop()

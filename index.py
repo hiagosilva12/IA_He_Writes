@@ -2,8 +2,6 @@ from asyncore import loop
 import speech_recognition as sr
 import os
 
-from sympy import true
-
 # funcao para reconhecimento de voz
 
 
@@ -34,17 +32,18 @@ def ouvir_microfone():
         print("Você disse: " + frase)
 
         # gerencia para o Linux
-        if frase == 'Linux':
-            os.system("python3 linux.py")
-        elif frase == 'Windows':
-            os.system("python3 windows.py")
+        if frase == 'Linux' or frase == 'linux':
+            os.system("cd Linux && python3 linux.py")
+        # gerencia para o Windows
+
+        elif frase == 'Windows' or frase == 'windows':
+            os.system("cd Windows && python3 windows.py")
+
+        # caso não entenda o que o usuario disse
     except sr.UnknownValueError:
         print("Não entendi")
-    except sr.RequestError as e:
-        print("Não consegui ouvir")
-    return frase
 
-
+# cria um loop infinito para ouvir o microfone
 loop()
 
 ouvir_microfone()

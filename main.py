@@ -1,4 +1,5 @@
 import speech_recognition as sr
+import os
 
 # Função para o reconhecimento de voz
 
@@ -9,6 +10,8 @@ def ouvir_microfone():
     with sr.Microphone() as source:
        # chama o algotimo de redução de ruído
         microfone.adjust_for_ambient_noise(source)
+        # limpa a tela
+        os.system("clear")
         # fala para o usuário falar
         print("Diga alguma coisa: ")
         # armazena a informação que o usuário falou
