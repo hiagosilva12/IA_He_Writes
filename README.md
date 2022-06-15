@@ -1,6 +1,7 @@
 
 # Recognizes speech and performs a task.
 python3 index.py
+(still in development)
 
 
 # IA that recognizes your speech and displays it on the console.
