@@ -3,7 +3,7 @@
 python3 index.py
 
 
-# AI that recognizes your speech and displays it on the console.
+# IA that recognizes your speech and displays it on the console.
 python3 main.py
 
 
